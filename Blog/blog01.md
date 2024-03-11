@@ -1,6 +1,6 @@
 ---
 title: "Blog 1 Roll-a-ball"
-author: "Adrian-Cristian Militaru"
+author: "Emil Vasilev"
 date: "13-02-2024"
 version: "0.1"
 ---
