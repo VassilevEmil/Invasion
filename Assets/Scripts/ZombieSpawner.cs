@@ -10,6 +10,8 @@ namespace SimpleLowPolyNature.Scripts
         public float spawnInterval = 10.0f;
         public int baseNumberOfZombies = 3; // Base number of zombies to spawn
 
+        private int currentWave = 1; // Tracks the current wave or difficulty level
+
         void Start()
         {
             StartCoroutine(SpawnZombies());
@@ -19,22 +21,26 @@ namespace SimpleLowPolyNature.Scripts
         {
             while (true)
             {
-                
                 int numberOfZombies = CalculateNumberOfZombies();
-                
+
                 for (int i = 0; i < numberOfZombies; i++)
                 {
                     SpawnZombie();
                     yield return new WaitForSeconds(spawnInterval);
                 }
+
+                yield return new WaitForSeconds(spawnInterval); // Wait between waves
+                currentWave++; // Increment the wave
             }
         }
 
         void SpawnZombie()
         {
-            // Spawn zombie at a random position
-            Vector3 randomPosition = new Vector3(Random.Range(-10f, 10f), 0f, Random.Range(-10f, 10f));
-            GameObject zombie = Instantiate(zombiePrefab, randomPosition, Quaternion.identity);
+            
+            Vector3 spawnPosition = new Vector3(113f, 8.7f, -127f);
+
+            // Spawn zombie at the specified position
+            GameObject zombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
 
             // Set the target for the zombie to move towards
             ZombieMovement zombieMovement = zombie.GetComponent<ZombieMovement>();
@@ -46,22 +52,9 @@ namespace SimpleLowPolyNature.Scripts
 
         int CalculateNumberOfZombies()
         {
-          
-            switch (DifficultyLevel.CurrentDifficulty)
-            {
-                case DifficultyLevel.levelOfDifficulty.Story:
-                    return baseNumberOfZombies;
-                case DifficultyLevel.levelOfDifficulty.Easy:
-                    return baseNumberOfZombies + 1;
-                case DifficultyLevel.levelOfDifficulty.Normal:
-                    return baseNumberOfZombies + 2;
-                case DifficultyLevel.levelOfDifficulty.Hard:
-                    return baseNumberOfZombies + 3;
-                case DifficultyLevel.levelOfDifficulty.UltraHard:
-                    return baseNumberOfZombies + 4;
-                default:
-                    return baseNumberOfZombies;
-            }
+            // Increase the number of zombies based on the current wave
+            return baseNumberOfZombies + currentWave - 1;
         }
     }
 }
+

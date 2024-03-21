@@ -5,17 +5,17 @@ namespace SimpleLowPolyNature.Scripts
 {
     public class ZombieMovement : MonoBehaviour
     {
-        private Transform target;
+        public Transform target;
         private NavMeshAgent agent;
-        private GoldManager goldManager;
+      //  private GoldManager goldManager;
 
         void Start()
         {
             agent = GetComponent<NavMeshAgent>();
-            goldManager = FindObjectOfType<GoldManager>();
+            // goldManager = FindObjectOfType<GoldManager>();
         }
 
-        void Update()
+          void Update()
         {
             if (target != null)
             {
@@ -29,14 +29,14 @@ namespace SimpleLowPolyNature.Scripts
             target = newTarget;
         }
 
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.CompareTag("TargetObject"))
-            {
-                // Deduct gold and destroy the zombie
-                goldManager.DeductGold(10);
-                Destroy(gameObject);
-            }
-        }
+        // private void OnCollisionEnter(Collision collision)
+        // {
+        //     if (collision.gameObject.CompareTag("TargetObject"))
+        //     {
+        //         // Deduct gold and destroy the zombie
+        //         goldManager.DeductGold(5);
+        //         Destroy(gameObject);
+        //     }
+        // }
     }
 }
