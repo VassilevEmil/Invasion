@@ -16,13 +16,15 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController _characterController;
     private Animator _animator;
-    private float verticalVelocity;
+   private float verticalVelocity;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
+       
     }
 
     // Update is called once per frame
@@ -81,6 +83,8 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, angle, 0);
         }
     }
+
+ 
     
 }
 

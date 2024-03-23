@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 namespace SimpleLowPolyNature.Scripts
 {
-    public class ZombieMovement : MonoBehaviour
+    public class ZombieMovement : MonoBehaviour, Ikillable
     {
         public Transform target;
         private NavMeshAgent agent;
@@ -29,14 +29,10 @@ namespace SimpleLowPolyNature.Scripts
             target = newTarget;
         }
 
-        // private void OnCollisionEnter(Collision collision)
-        // {
-        //     if (collision.gameObject.CompareTag("TargetObject"))
-        //     {
-        //         // Deduct gold and destroy the zombie
-        //         goldManager.DeductGold(5);
-        //         Destroy(gameObject);
-        //     }
-        // }
+        
+        public void Die()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

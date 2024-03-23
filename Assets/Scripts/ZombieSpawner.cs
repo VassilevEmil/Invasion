@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 
 namespace SimpleLowPolyNature.Scripts
 {
@@ -7,54 +8,69 @@ namespace SimpleLowPolyNature.Scripts
     {
         public GameObject zombiePrefab;
         public Transform targetObject;
-        public float spawnInterval = 10.0f;
-        public int baseNumberOfZombies = 3; // Base number of zombies to spawn
+        public float spawnInterval = 25.0f;
+        public int baseNumberOfZombies = 1; // Base number of zombies to spawn
 
-        private int currentWave = 1; // Tracks the current wave or difficulty level
+        // var for tracking the number of alive zombies
+        public int zombieCount;
+        public TextMeshProUGUI zombieCountText;
+
 
         void Start()
         {
             StartCoroutine(SpawnZombies());
+            zombieCount = 1;
+            setCountText(zombieCount);
         }
 
         IEnumerator SpawnZombies()
         {
             while (true)
             {
-                int numberOfZombies = CalculateNumberOfZombies();
-
-                for (int i = 0; i < numberOfZombies; i++)
+                // int numberOfZombies = baseNumberOfZombies;
+                for (int i = 0; i < baseNumberOfZombies; i++)
                 {
-                    SpawnZombie();
+
+                    SpawnZombie(baseNumberOfZombies);
+                    baseNumberOfZombies += baseNumberOfZombies;
+
+                    // number of alive zombies
+                    zombieCount = baseNumberOfZombies;
+                    setCountText(zombieCount);
                     yield return new WaitForSeconds(spawnInterval);
+
                 }
-
-                yield return new WaitForSeconds(spawnInterval); // Wait between waves
-                currentWave++; // Increment the wave
             }
         }
 
-        void SpawnZombie()
+        void setCountText(int count)
         {
-            
-            Vector3 spawnPosition = new Vector3(113f, 8.7f, -127f);
+            zombieCountText.text = "Zombies: " + zombieCount.ToString();
+        }
 
-            // Spawn zombie at the specified position
-            GameObject zombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
-
-            // Set the target for the zombie to move towards
-            ZombieMovement zombieMovement = zombie.GetComponent<ZombieMovement>();
-            if (zombieMovement != null)
+    void SpawnZombie(int numberOfZombies)
+        {
+            for (int i = 0; i < numberOfZombies; i++)
             {
-                zombieMovement.SetTarget(targetObject);
+                // Define the range for random offsets
+                float offsetX = Random.Range(-5f, 5f); 
+                float offsetZ = Random.Range(-5f, 5f); 
+
+                // Calculate the spawn position with random offsets
+                Vector3 spawnPosition = new Vector3(113f + offsetX, 8.7f, -127f + offsetZ);
+
+                // Spawn zombie at the calculated position
+                GameObject zombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
+
+                // Set the target for the zombie to move towards
+                ZombieMovement zombieMovement = zombie.GetComponent<ZombieMovement>();
+                if (zombieMovement != null)
+                {
+                    zombieMovement.SetTarget(targetObject);
+                }
             }
         }
 
-        int CalculateNumberOfZombies()
-        {
-            // Increase the number of zombies based on the current wave
-            return baseNumberOfZombies + currentWave - 1;
-        }
+
     }
 }
-
