@@ -5,34 +5,43 @@ namespace SimpleLowPolyNature.Scripts
 {
     public class ZombieMovement : MonoBehaviour, Ikillable
     {
-        public Transform target;
+        public Vector3 target;
+        
         private NavMeshAgent agent;
-      //  private GoldManager goldManager;
 
         void Start()
         {
             agent = GetComponent<NavMeshAgent>();
-            // goldManager = FindObjectOfType<GoldManager>();
         }
 
-          void Update()
+        void Update()
         {
             if (target != null)
             {
-                // Move towards the target
-                agent.SetDestination(target.position);
+                agent.SetDestination(target);
             }
         }
 
         public void SetTarget(Transform newTarget)
         {
-            target = newTarget;
+            target = newTarget.position;
         }
 
-        
+        void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("PlayerProjectile"))
+            {
+                // Deactivate the collided zombie
+                Die();
+
+                // Deactivate the spawned object
+                collision.gameObject.SetActive(false);
+            }
+        }
+
         public void Die()
         {
-            gameObject.SetActive(false);
+            gameObject.SetActive(false); // Deactivate the zombie
         }
     }
 }

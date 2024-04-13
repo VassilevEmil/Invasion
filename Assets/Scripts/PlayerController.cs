@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
    private float verticalVelocity;
    
+   
+  
+
+   
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +35,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
+        
+       
+        
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         // Check if the arrow keys are pressed
@@ -60,6 +67,11 @@ public class PlayerController : MonoBehaviour
         }
         rotateOnTurn();
     }
+    
+    
+   
+    
+   
     
     void ApplyGravity()
     {
