@@ -15,8 +15,6 @@ namespace SimpleLowPolyNature.Scripts
                 SpawnRandomObject();
             }
         }
-
-
         void SpawnRandomObject()
         {
             // Get the player's position
