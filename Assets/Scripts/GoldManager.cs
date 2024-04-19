@@ -1,27 +1,38 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GoldManager : MonoBehaviour
 {
-    public static int CurrentGold { get; private set; } = 1000;
+    public static int currentGold { get; private set; } 
     public Text goldText;
+    public TextMeshProUGUI goldCountText;
 
     private void Start()
     {
+      
+            
+        
         UpdateGoldUI();
     }
-
-    public void DeductGold(int amount)
+    public static void SetStartingGold(int startingGold)
     {
-        CurrentGold -= amount;
+        currentGold = startingGold;
+        
+    }
+
+    public void DeductGold()
+    {
+        currentGold--;
         UpdateGoldUI();
     }
 
     void UpdateGoldUI()
     {
-        if (goldText != null)
-        {
-            goldText.text = "Gold: " + CurrentGold.ToString();
-        }
+       
+        goldCountText.text = "Gold: " + currentGold.ToString();
+        
     }
+    
+    
 }
