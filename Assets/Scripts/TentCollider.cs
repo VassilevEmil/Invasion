@@ -1,22 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace SimpleLowPolyNature.Scripts
 {
     public class TentCollider : MonoBehaviour
     {
         public int startingGold = 100;
-        private int currentGold;
 
+        private ZombiePoolManager _zombiePoolManager;
+        private GoldManager _goldManager;
         void Start()
         {
-            currentGold = startingGold;
+            _zombiePoolManager = FindObjectOfType<ZombiePoolManager>();
+            _goldManager = FindObjectOfType<GoldManager>();
+#if UNITY_EDITOR
+            _goldManager.SetStartingGold(startingGold);
+#else
+            _goldManager.SetStartingGold(_goldManager.GetCurrentGold());
+#endif
         }
-
+        
         void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Zombie"))
+        { 
+            Debug.Log(other.gameObject.name);
+            if (other.gameObject.CompareTag("Zombie"))
             {
-                
+                Debug.Log("sss");
                 ZombieMovement zombieMovement = other.GetComponent<ZombieMovement>();
 
                
@@ -24,6 +33,7 @@ namespace SimpleLowPolyNature.Scripts
                 {
                   
                     zombieMovement.Die();
+                    _zombiePoolManager.DeactivateZombie(other.gameObject);
 
                     
                     DeductGold(10);
@@ -35,9 +45,10 @@ namespace SimpleLowPolyNature.Scripts
 
         void DeductGold(int amount)
         {
-            currentGold -= amount;
-
-     
+            if (amount >= 0)
+            {
+                _goldManager.DeductGold(amount);
+            } 
         }
     }
 }

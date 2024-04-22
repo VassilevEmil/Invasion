@@ -5,34 +5,34 @@ using UnityEngine.UI;
 public class GoldManager : MonoBehaviour
 {
     public static int currentGold { get; private set; } 
-    public Text goldText;
     public TextMeshProUGUI goldCountText;
 
     private void Start()
     {
-      
-            
-        
         UpdateGoldUI();
     }
-    public static void SetStartingGold(int startingGold)
+
+    public static void SetStartingGoldFromMenu(int starttingGold)
+    {
+        currentGold = starttingGold;
+    }
+
+    public int GetCurrentGold()
+    {
+        return currentGold;
+    }
+    
+    public void SetStartingGold(int startingGold)
     {
         currentGold = startingGold;
-        
     }
-
-    public void DeductGold()
+    public void DeductGold(int amount)
     {
-        currentGold--;
+        currentGold-=amount;
         UpdateGoldUI();
     }
-
     void UpdateGoldUI()
     {
-       
         goldCountText.text = "Gold: " + currentGold.ToString();
-        
     }
-    
-    
 }

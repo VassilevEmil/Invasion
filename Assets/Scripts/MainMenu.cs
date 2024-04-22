@@ -32,8 +32,6 @@ public class MainMenu : MonoBehaviour
     {
         throw new NotImplementedException();
     }
-
-
     // Load the game scene
     public void PlayGame()
     {
@@ -47,26 +45,16 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
         Debug.Log("QUitting the game");
     }
-
-    
     public void GoldButton500()
     {
-        GoldManager.SetStartingGold(500);
+        GoldManager.SetStartingGoldFromMenu(500);
         PlayGame();
-
-        
-       
        
     }
-
     public void GoldButton1000()
     {
-        GoldManager.SetStartingGold(1000);
+        GoldManager.SetStartingGoldFromMenu(1000);
         PlayGame();
        
     }
-    
-    
-
-   
 }

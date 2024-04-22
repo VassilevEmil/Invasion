@@ -27,17 +27,17 @@ namespace SimpleLowPolyNature.Scripts
             target = newTarget.position;
         }
 
-        void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.CompareTag("PlayerProjectile"))
-            {
+       //oid OnCollisionEnter(Collision collision)
+       // {
+       //     if (collision.gameObject.CompareTag("PlayerProjectile"))
+       //     {
                 // Deactivate the collided zombie
-                Die();
+         //       Die();
 
                 // Deactivate the spawned object
-                collision.gameObject.SetActive(false);
-            }
-        }
+          //      collision.gameObject.SetActive(false);
+           // }
+        //}
 
         public void Die()
         {
