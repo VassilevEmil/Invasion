@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using SimpleLowPolyNature.Scripts;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ public class GoldManager : MonoBehaviour
 {
     public static int currentGold { get; private set; } 
     public TextMeshProUGUI goldCountText;
+    public GameOverScreen gameOverScreen;
 
     private void Start()
     {
@@ -30,6 +32,12 @@ public class GoldManager : MonoBehaviour
     {
         currentGold-=amount;
         UpdateGoldUI();
+
+        if (currentGold == 0)
+        {
+            gameOverScreen.Setup(RockCollision.killCount);
+        }
+       
     }
     void UpdateGoldUI()
     {
