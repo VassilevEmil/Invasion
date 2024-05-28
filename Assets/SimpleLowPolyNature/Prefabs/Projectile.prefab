@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7309540754081993566}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.009755421, y: -0.86543375, z: 0.008935764, w: 0.5008487}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.645102, y: 0.21579173, z: -4.691459}
   m_LocalScale: {x: 0.31499, y: 0.21410377, z: 1}
   m_ConstrainProportionsScale: 0
@@ -98,6 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e5f532a17edf5419d8c07a367e1a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killCountText: {fileID: 0}
+  gameOverScreen: {fileID: 0}
+  rockPoolManager: {fileID: 0}
+  lifespan: 2.5
 --- !u!135 &656691644137000625
 SphereCollider:
   m_ObjectHideFlags: 0

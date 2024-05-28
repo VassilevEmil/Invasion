@@ -11,4 +11,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoDay.unity
     guid: 304a5748b784bc241be3c08d67013b21
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: c351e5c0391e4aa44b779bdf6a6b333f, type: 2}
