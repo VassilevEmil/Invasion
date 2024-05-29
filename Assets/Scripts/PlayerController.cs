@@ -12,9 +12,11 @@ public class PlayerController : MonoBehaviour
     private float verticalVelocity;
     private float _timer;
     private bool _hasRotate;
+    
 
     void Start()
     {
+        
         _animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
         _playerInput = GetComponent<PlayerInput>();
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (GameController.isGameOver) return;
         Vector2 movementInput = _playerInput.actions["Move"].ReadValue<Vector2>();
 
         // Handle movement

@@ -43,6 +43,8 @@ namespace SimpleLowPolyNature.Scripts
 
         public void DeactivateZombie(GameObject zombie)
         {
+            
+            zombie.GetComponent<ZombieMovement>().StopAllCoroutines();
             // Deactivate the zombie and return it to the pool
             zombie.SetActive(false);
         }

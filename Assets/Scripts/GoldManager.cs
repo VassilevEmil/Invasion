@@ -8,7 +8,7 @@ public class GoldManager : MonoBehaviour
     public static int currentGold { get; private set; } 
     public TextMeshProUGUI goldCountText;
     public GameOverScreen gameOverScreen;
-
+    public GameController gameController; 
     private void Start()
     {
         UpdateGoldUI();
@@ -35,7 +35,7 @@ public class GoldManager : MonoBehaviour
 
         if (currentGold == 0)
         {
-            gameOverScreen.Setup(RockCollision.killCount);
+            gameController.GameOver(); // Call the GameOver method on the GameController
         }
        
     }

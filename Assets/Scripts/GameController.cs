@@ -1,17 +1,32 @@
 ﻿using SimpleLowPolyNature.Scripts;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 
 {
-    public GameOverScreen GameOverScreen;
-    public int kills;
+    public GameOverScreen gameOverScreen;
+    public TextMeshProUGUI kills;
+    public static bool isGameOver = false;
 
+    private void Start()
+    {
+        if (gameOverScreen == null)
+        {
+            Debug.LogError("GameOverScreen is not assigned in GameController.");
+        }
+    }
     public void GameOver()
     {
-        GameOverScreen.Setup(kills);
+        isGameOver = true; // Set the game over state
+        if (gameOverScreen != null)
+        {
+            gameOverScreen.Setup(kills);
+        }
+        else
+        {
+            Debug.LogError("gameOverScreen is null in GameOver method.");
+        }
     }
-
-
 }
