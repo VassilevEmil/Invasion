@@ -193,3 +193,5 @@ I decided to create object pool for the spawning objects from the player as well
     }
 
 # Finally, i made it so, when the 'Game Over' screen appears, the game to stop and only the user input to be available, so the user is still able to choose what to do from the game over screen options. 
+
+# Lifespan has also been introduced for the zombies, so if a zombie fails to reach the tent with gold within specified timeframe it becomes inactive and is returned back to the pool
