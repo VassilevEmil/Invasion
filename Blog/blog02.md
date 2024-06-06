@@ -21,3 +21,9 @@ version: "0.1"
 | Field           | Description                                                                                    |
 |-----------------|------------------------------------------------------------------------------------------------|
 | Player Experience and Game POV         | The game will be a Top-down 45 engle and the player will have to defend his tend full of gold. |
+
+## Milestones 
+
+# 1 - Setting the actor and map, adjusting the camera and controllers
+# 2 -  Zombie controller, Menu screen, object pooling for zombies, object pooling for spawnable rocks
+# 3 - Game over screen, final refinements 
