@@ -20,8 +20,8 @@ Youtube video -  https://www.youtube.com/watch?v=nnJTdicrKX0
 # Blog Posts
 
 - [Blog 1 - Roll a Ball](Blog/blog01.md)
-- Blog 2 - Project Idea (Blog/blog02.md)
-- Blog 3 - Setting the game(Blog/blog03.md)
-- Blog 4 - Adding zombies and logic(Blog/blog04.md)
-- Blog 5 - Game over screen + more logic(Blog/blog05.md)
-- Blog 6 - Optimizing and cleaning errors(Blog/blog06.md)
+- [Blog 2 - Project Idea](Blog/blog02.md)
+- [Blog 3 - Setting the game](Blog/blog03.md)
+- [Blog 4 - Adding zombies and logic](Blog/blog04.md)
+- [Blog 5 - Game over screen + more logic](Blog/blog05.md)
+- [Blog 6 - Optimizing and cleaning errors](Blog/blog06.md)
