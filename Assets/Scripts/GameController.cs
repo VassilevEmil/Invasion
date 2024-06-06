@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     
     public void GameOver()
     {
-        isGameOver = true; // Set the game over state
+        isGameOver = true; 
         if (gameOverScreen != null)
         {
             gameOverScreen.Setup(kills);

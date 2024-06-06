@@ -40,7 +40,7 @@ public class GoldManager : MonoBehaviour
 
         if (gold == 0)
         {
-            gameController.GameOver(); // Call the GameOver method on the GameController
+            gameController.GameOver(); 
         }
     }
 

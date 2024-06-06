@@ -14,7 +14,7 @@ namespace SimpleLowPolyNature.Scripts
         public GameObject targetObject;
         public float spawnInterval = 25.0f;
 
-        // Variable for tracking the number of alive zombies
+        
         public int zombieCount;
         public TextMeshProUGUI zombieCountText;
 
@@ -23,8 +23,8 @@ namespace SimpleLowPolyNature.Scripts
         void Start()
         {
             InvokeRepeating(nameof(SpawnZombie), 0f, spawnInterval);
-            zombieCount = 0; // Initialize the count to zero
-            UpdateZombieCount(); // Update the text initially
+            zombieCount = 0; 
+            UpdateZombieCount();
         }
 
         void SpawnZombie()
@@ -42,7 +42,7 @@ namespace SimpleLowPolyNature.Scripts
                 {
                     // Increment the zombie count when a zombie is spawned
                     zombieCount++;
-                    UpdateZombieCount(); // Update the text
+                    UpdateZombieCount(); 
                     // Set the target for the zombie to move towards
                     ZombieMovement zombieMovement = zombie.GetComponent<ZombieMovement>();
                     if (zombieMovement != null)
@@ -67,7 +67,7 @@ namespace SimpleLowPolyNature.Scripts
         public void DecrementZombieCount()
         {
             zombieCount--;
-            UpdateZombieCount(); // Update the text
+            UpdateZombieCount(); 
         }
     }
 

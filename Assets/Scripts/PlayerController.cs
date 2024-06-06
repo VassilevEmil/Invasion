@@ -26,14 +26,14 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 movementInput = _playerInput.actions["Move"].ReadValue<Vector2>();
 
-        // Handle movement
+       
         Vector3 forwardMovement = transform.forward * movementInput.y * speed * Time.deltaTime;
         _characterController.Move(forwardMovement);
         
-        // Handle rotation
+        
         float turn = 0;
 
-// Check if movementInput is 1 or -1
+
         if (movementInput.x != 0 && !_hasRotate)
         {
             _hasRotate = true;
@@ -50,13 +50,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-// Apply the rotation
+
         transform.Rotate(0, turn, 0);
 
 
-        // Update animator parameters
+       
         _animator.SetFloat("YMove", movementInput.y);
-        //_animator.SetFloat("XMove", movementInput.x);
+        
 
         ApplyGravity();
     }

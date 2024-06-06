@@ -9,7 +9,7 @@ namespace SimpleLowPolyNature.Scripts
 {
     public class RockSpawning : MonoBehaviour
     {
-        public RockPoolManager rockPoolManager; // Reference to the RockPoolManager
+        public RockPoolManager rockPoolManager; 
         public TextMeshProUGUI killCountText;
         public float rockSpeed = 20f;
         private PlayerInput _playerInput;
@@ -44,11 +44,11 @@ namespace SimpleLowPolyNature.Scripts
 
         void SpawnRandomObject()
         {
-            // Get the player's position
+            
             Vector3 playerPosition = transform.position;
 
             // Calculate the spawn position in front of the player
-            Vector3 spawnOffset = transform.forward * 2; // Adjust the forward offset as needed
+            Vector3 spawnOffset = transform.forward * 2; 
             Vector3 spawnPosition = playerPosition + spawnOffset;
 
             // Spawn the rock using the RockPoolManager
@@ -67,7 +67,7 @@ namespace SimpleLowPolyNature.Scripts
             
             rb.velocity = spawnedRock.transform.forward * rockSpeed;
             
-            // Ensure the rock is active
+            
             spawnedRock.SetActive(true);
         }
     }
