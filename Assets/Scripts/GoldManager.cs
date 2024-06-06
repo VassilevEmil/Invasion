@@ -1,46 +1,51 @@
-﻿using SimpleLowPolyNature.Scripts;
+﻿using System;
+using SimpleLowPolyNature.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GoldManager : MonoBehaviour
 {
-    public static int currentGold { get; private set; } 
     public TextMeshProUGUI goldCountText;
     public GameOverScreen gameOverScreen;
-    public GameController gameController; 
+    public GameController gameController;
+
+    private int gold;
+
+   
+
     private void Start()
     {
+        gold = GoldVarTransport.currentGold;
+        Debug.Log(gold);
         UpdateGoldUI();
     }
 
-    public static void SetStartingGoldFromMenu(int starttingGold)
-    {
-        currentGold = starttingGold;
-    }
+    
 
     public int GetCurrentGold()
     {
-        return currentGold;
+        return gold;
     }
     
     public void SetStartingGold(int startingGold)
     {
-        currentGold = startingGold;
+        gold = startingGold;
     }
+
     public void DeductGold(int amount)
     {
-        currentGold-=amount;
+        gold -= amount;
         UpdateGoldUI();
 
-        if (currentGold == 0)
+        if (gold == 0)
         {
             gameController.GameOver(); // Call the GameOver method on the GameController
         }
-       
     }
+
     void UpdateGoldUI()
     {
-        goldCountText.text = "Gold: " + currentGold.ToString();
+        goldCountText.text = "Gold: " + gold.ToString();
     }
 }

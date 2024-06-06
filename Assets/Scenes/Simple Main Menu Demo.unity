@@ -283,7 +283,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1463429774}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DifficultyLevel, Assembly-CSharp
         m_MethodName: LoadDifficulty
         m_Mode: 1
@@ -381,7 +381,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1463429774}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DifficultyLevel, Assembly-CSharp
         m_MethodName: LoadDifficulty
         m_Mode: 1
@@ -491,7 +491,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1463429774}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DifficultyLevel, Assembly-CSharp
         m_MethodName: LoadDifficulty
         m_Mode: 1
@@ -942,7 +942,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1463429774}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DifficultyLevel, Assembly-CSharp
         m_MethodName: SaveDifficulty
         m_Mode: 1
@@ -1813,11 +1813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb66a2fd885c85498b127f8bc861add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  goldButton500: {fileID: 0}
-  saveButton: {fileID: 0}
-  goldButton1000: {fileID: 0}
   startingGold: 0
 --- !u!1 &1164431118
 GameObject:
@@ -2281,7 +2276,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1463429774}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DifficultyLevel, Assembly-CSharp
         m_MethodName: LoadDifficulty
         m_Mode: 1
@@ -2699,7 +2694,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1463429773}
   - component: {fileID: 1463429772}
-  - component: {fileID: 1463429774}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -2719,11 +2713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb66a2fd885c85498b127f8bc861add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playButton: {fileID: 0}
-  quitButton: {fileID: 0}
-  goldButton500: {fileID: 0}
-  saveButton: {fileID: 0}
-  goldButton1000: {fileID: 0}
   startingGold: 0
 --- !u!4 &1463429773
 Transform:
@@ -2742,18 +2731,6 @@ Transform:
   - {fileID: 1444839529}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1463429774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463429771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0c15777bbd15a74a8a22b40da9cdaaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1472534621
 GameObject:
   m_ObjectHideFlags: 0
@@ -3262,7 +3239,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1463429774}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DifficultyLevel, Assembly-CSharp
         m_MethodName: LoadDifficulty
         m_Mode: 1

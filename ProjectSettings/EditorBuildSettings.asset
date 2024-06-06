@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Quantum Tek/Simple Menu/Scenes/Simple Main Menu Demo.unity
     guid: 0571b5ac2f85141729a62dcec949932e
+  - enabled: 1
+    path: Assets/Scenes/Simple Main Menu Demo.unity
+    guid: ffe2605fa02d5494aaf7a61266846dc0
   - enabled: 1
     path: Assets/Scenes/DemoDay.unity
     guid: 304a5748b784bc241be3c08d67013b21

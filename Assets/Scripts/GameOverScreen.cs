@@ -26,7 +26,7 @@ namespace SimpleLowPolyNature.Scripts
         public void exitButton()
         {
             Time.timeScale = 1;
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("Simple Main Menu Demo");
         }
     }
 }

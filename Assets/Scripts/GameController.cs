@@ -10,13 +10,7 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI kills;
     public static bool isGameOver = false;
 
-    private void Start()
-    {
-        if (gameOverScreen == null)
-        {
-            Debug.LogError("GameOverScreen is not assigned in GameController.");
-        }
-    }
+    
     public void GameOver()
     {
         isGameOver = true; // Set the game over state

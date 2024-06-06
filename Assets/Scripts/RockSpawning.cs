@@ -34,7 +34,7 @@ namespace SimpleLowPolyNature.Scripts
             if (_hasAttack)
             {
                 _timer += Time.deltaTime;
-                if (_timer >= 1f)
+                if (_timer >= 0.25f)
                 {
                     _timer = 0;
                     _hasAttack = false;
