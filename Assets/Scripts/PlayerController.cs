@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (GameController.isGameOver) return;
         Vector2 movementInput = _playerInput.actions["Move"].ReadValue<Vector2>();
 
         // Handle movement
